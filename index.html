@@ -157,6 +157,30 @@
             color: #fff;
             font-size: 1em;
         }
+       /* Up Button Styling */
+        #upButton {
+            display: none; /* Hidden by default */
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 100;
+            transition: background-color 0.3s;
+        }
+
+        #upButton:hover {
+            background-color: #555;
+        }
+
+
+
 
         /* Animations */
         @keyframes fadeIn {
@@ -262,5 +286,30 @@
     <footer>
         <p>&copy; 2024 Subjectify. All Rights Reserved.</p>
     </footer>
+     <button id="upButton" onclick="scrollToTop()">👆</button>
+
+    <!-- JavaScript for Up Button functionality -->
+    <script>
+        // Show or hide the Up button based on scroll position
+        window.onscroll = function() { toggleUpButton() };
+
+        function toggleUpButton() {
+            const upButton = document.getElementById("upButton");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                upButton.style.display = "block";
+            } else {
+                upButton.style.display = "none";
+            }
+        }
+
+        // Smooth scroll to top when Up button is clicked
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+
 </body>
 </html>
