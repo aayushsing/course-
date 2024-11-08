@@ -194,6 +194,66 @@
             object-fit: cover;
             border-radius: 8px;
         }
+          #notesBox {
+            position: fixed;
+            bottom: 80px;
+            right: 30px;
+            width: 300px;
+            background-color: #fff;
+            border: 2px solid #333;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none; /* Hidden by default */
+            z-index: 100;
+        }
+
+        #notesBoxHeader {
+            background-color: #333;
+            color: white;
+            padding: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #notesBoxHeader h4 {
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        #notesBoxHeader button {
+            background: transparent;
+            color: white;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        #notesBoxContent {
+            padding: 15px;
+            color: #333;
+            font-size: 1em;
+        }
+
+        /* Minimized Button */
+        #notesMinimized {
+            position: fixed;
+            bottom: 80px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 100;
+        }
+
     </style>
 </head>
 <body>
@@ -281,7 +341,19 @@
             </div>
         </div>
     </section>
+    <!-- Floating Notes Window -->
+    <div id="notesBox">
+        <div id="notesBoxHeader">
+            <h4>Notes</h4>
+            <button onclick="closeNotesBox()">✕</button>
+        </div>
+        <div id="notesBoxContent">
+            <p>Welcome to the notes section! Here, you can find useful information about each subject and class. Remember to check regularly for updates and new insights.</p>
+        </div>
+    </div>
 
+    <!-- Minimized Button -->
+    <div id="notesMinimized" onclick="openNotesBox()">📝</div>
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Subjectify. All Rights Reserved.</p>
@@ -309,6 +381,23 @@
                 behavior: "smooth"
             });
         }
+          // Function to open the notes box
+        function openNotesBox() {
+            document.getElementById("notesBox").style.display = "block";
+            document.getElementById("notesMinimized").style.display = "none";
+        }
+
+        // Function to close the notes box and minimize
+        function closeNotesBox() {
+            document.getElementById("notesBox").style.display = "none";
+            document.getElementById("notesMinimized").style.display = "flex";
+        }
+
+        // Automatically open the notes box when the website loads
+        window.onload = function() {
+            openNotesBox();
+        };
+
     </script>
 
 </body>
