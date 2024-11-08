@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject and Class-Based Course Platform</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body styling */
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navbar styling */
+        nav {
+            width: 100%;
+            background-color: #333;
+            padding: 1em 0;
+            display: flex;
+            justify-content: space-around;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1em;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Hero section styling */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+            background: linear-gradient(120deg, #8a2387, #e94057, #f27121);
+            color: #fff;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 0.2em;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+        }
+
+        /* Button styling */
+        .btn {
+            padding: 0.8em 1.5em;
+            margin-top: 1em;
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ff4757;
+        }
+
+        /* Course section styling */
+        .courses {
+            padding: 4em 2em;
+            text-align: center;
+        }
+
+        .courses h2 {
+            font-size: 2.5em;
+            margin-bottom: 1em;
+            color: #333;
+        }
+
+        .class-section {
+            margin-top: 3em;
+        }
+
+        .class-title {
+            font-size: 2em;
+            color: #444;
+            margin-bottom: 1em;
+        }
+
+        .course-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2em;
+            margin-top: 2em;
+        }
+
+        .course-item {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 1.5em;
+            width: 250px;
+            transition: transform 0.3s;
+        }
+
+        .course-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .course-title {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+
+        .course-desc {
+            font-size: 1em;
+            color: #777;
+        }
+
+        .get-now-btn, .question-btn {
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .get-now-btn:hover, .question-btn:hover {
+            background-color: #43a047;
+        }
+
+        /* Footer styling */
+        footer {
+            padding: 2em;
+            text-align: center;
+            background: #333;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .course-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div>
+            <h1>Welcome to Subjectify</h1>
+            <p>Specialized Learning for Key Subjects</p>
+            <button class="btn">Browse Courses</button>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <h2>Our Courses</h2>
+
+        <!-- Class 10 Section -->
+        <div class="class-section" id="class-10">
+            <h3 class="class-title">Class 10</h3>
+            <div class="course-list">
+                <div class="course-item">
+                    <img src="./sciences.jpeg" alt="Physics" class="course-img">
+                    <h4 class="course-title">Science</h4>
+                    <p class="course-desc">Fundamentals of science including physics, chemistry, and biology.</p>
+                    <a href="https://drive.google.com/link-to-science-content" class="get-now-btn">Get Now</a>
+                    <a href="https://drive.google.com/link-to-science-questions" class="question-btn">Last 5 Years Papers</a>
+                </div>
+                <div class="course-item">
+                    <img src="./maths.jpeg" alt="Mathematics" class="course-img">
+                    <h4 class="course-title">Mathematics</h4>
+                    <p class="course-desc">Algebra, geometry, trigonometry, and statistics.</p>
+                    <a href="https://drive.google.com/link-to-maths-content" class="get-now-btn">Get Now</a>
+                    <a href="https://drive.google.com/link-to-maths-questions" class="question-btn">Last 5 Years Papers</a>
+                </div>
+                <div class="course-item">
+                    <img src="./computer.jpeg" alt="Computer" class="course-img">
+                    <h4 class="course-title">Computer</h4>
+                    <p class="course-desc">Introduction to computer systems, programming, and applications.</p>
+                    <a href="https://drive.google.com/link-to-computer-content" class="get-now-btn">Get Now</a>
+                    <a href="https://drive.google.com/link-to-computer-questions" class="question-btn">Last 5 Years Papers</a>
+                </div>
+                <div class="course-item">
+                    <img src="./SocialScience.jpg" alt="Social Science" class="course-img">
+                    <h4 class="course-title">Social Science</h4>
+                    <p class="course-desc">History, geography, and political science.</p>
+                    <a href="https://drive.google.com/link-to-social-science-content" class="get-now-btn">Get Now</a>
+                    <a href="https://drive.google.com/link-to-social-science-questions" class="question-btn">Last 5 Years Papers</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Class 12 Section -->
+        <div class="class-section" id="class-12">
+            <h3 class="class-title">Class 12</h3>
+            <div class="course-list">
+                <div class="course-item">
+                    <img src="./physics.jpeg" alt="Physics" class="course-img">
+                    <h4 class="course-title">Physics</h4>
+                    <p class="course-desc">Advanced topics in electromagnetism, optics, and modern physics.</p>
+                    <a href="https://drive.google.com/drive/folders/1_pVNYRXiruH7twidEtC_ar7urcVXYBry?usp=drive_link" class="get-now-btn">Get Now</a>
+                    <a href="https://drive.google.com/link-to-physics12-questions" class="question-btn">Last 5 Years Papers</a>
+                </div>
+                <div class="course-item">
+                    <img src="./maths12.jpg" alt="Mathematics" class="course-img">
+                    <h4 class="course-title">Mathematics</h4>
+                    <p class="course-desc">Calculus, linear algebra, and differential equations.</p>
+                    <a href="https://drive.google.com/drive/folders/1SWWel7NXStLAEx6UEhI4FI-pO5hidP7Q?usp=drive_link" class="get-now-btn">Get Now</a>
+                    <a href="https://drive.google.com/link-to-maths12-questions" class="question-btn">Last 5 Years Papers</a>
+                </div>
+                <div class="course-item">
+                    <img src="./chemistry.jpeg" alt="Chemistry" class="course-img">
+                    <h4 class="course-title">Chemistry</h4>
+                    <p class="course-desc">paly with chemical and learn more....</p>
+                    <a href="https://www.tiwariacademy.com/ncert-solutions/class-12/chemistry/chapter-1/#class-12-chemistry-chapter-1-exercises" class="get-now-btn">Get Now</a>
+                    <a href="https://drive.google.com/link-to-comp-science12-questions" class="question-btn">Last 5 Years Papers</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Subjectify. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
